@@ -12,31 +12,34 @@ import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import xyz.teamgravity.a3danimateddropdownmenu.ui.theme.AnimatedDropdownMenuTheme
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Surface(
-                color = Color.White,
-                modifier = Modifier.fillMaxSize()
-            ) {
-                DropDownMenu(
-                    text = "Hello Raheem!",
-                    modifier = Modifier.padding(16.dp)
+            AnimatedDropdownMenuTheme {
+                Surface(
+                    color = Color.White,
+                    modifier = Modifier.fillMaxSize()
                 ) {
-                    Surface(
-                        color = Color.Cyan,
-                        modifier = Modifier.fillMaxWidth()
+                    DropDownMenu(
+                        text = "Hello Raheem!",
+                        modifier = Modifier.padding(16.dp)
                     ) {
-                        Text(
-                            text = "This is now revealed",
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(120.dp)
-                                .padding(16.dp)
-                        )
+                        Surface(
+                            color = Color.Cyan,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "This is now revealed",
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(120.dp)
+                                    .padding(16.dp)
+                            )
+                        }
                     }
                 }
             }
